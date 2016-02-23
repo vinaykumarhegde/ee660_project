@@ -1,0 +1,33 @@
+#Git ignore file.
+
+#Only upload required datasets.
+dataset/kaggle
+dataset/original/*batch*
+dataset/original/dataset_sift.hdf5
+dataset/original/readme.html
+
+#Don't sync CNN predicted values.
+keras/model_predictions*
+
+#Ignore the ipython checkpoints.
+notebooks/.ipynb_checkpoints
+notebooks/*.pkl
+notebooks/*.npy
+
+#don't upload the venv directory
+venv/
+
+# Ignore all pyc files
+**.pyc
+*.pyc
+#*.pkl
+scripts/*.pkl
+
+# Don't syn unwanted tex files.
+report/*.blg
+report/*.aux
+report/*.dvi
+report/*.log
+report/*.out
+report/*.synctex*
+report/*.toc

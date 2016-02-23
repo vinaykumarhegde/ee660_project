@@ -1,0 +1,86 @@
+class_mode: categorical
+layers:
+- W_constraint: null
+  W_regularizer: null
+  activation: linear
+  activity_regularizer: null
+  b_constraint: null
+  b_regularizer: null
+  border_mode: full
+  init: glorot_uniform
+  name: Convolution2D
+  nb_col: 3
+  nb_filter: 32
+  nb_row: 3
+  stack_size: 3
+  subsample: &id001 !!python/tuple [1, 1]
+- {activation: relu, beta: 0.1, name: Activation, target: 0}
+- W_constraint: null
+  W_regularizer: null
+  activation: linear
+  activity_regularizer: null
+  b_constraint: null
+  b_regularizer: null
+  border_mode: valid
+  init: glorot_uniform
+  name: Convolution2D
+  nb_col: 3
+  nb_filter: 32
+  nb_row: 3
+  stack_size: 32
+  subsample: *id001
+- {activation: relu, beta: 0.1, name: Activation, target: 0}
+- ignore_border: true
+  name: MaxPooling2D
+  poolsize: !!python/tuple [2, 2]
+  stride: null
+- {name: Dropout, p: 0.25}
+- W_constraint: null
+  W_regularizer: null
+  activation: linear
+  activity_regularizer: null
+  b_constraint: null
+  b_regularizer: null
+  border_mode: full
+  init: glorot_uniform
+  name: Convolution2D
+  nb_col: 3
+  nb_filter: 64
+  nb_row: 3
+  stack_size: 32
+  subsample: *id001
+- {activation: relu, beta: 0.1, name: Activation, target: 0}
+- W_constraint: null
+  W_regularizer: null
+  activation: linear
+  activity_regularizer: null
+  b_constraint: null
+  b_regularizer: null
+  border_mode: valid
+  init: glorot_uniform
+  name: Convolution2D
+  nb_col: 3
+  nb_filter: 64
+  nb_row: 3
+  stack_size: 64
+  subsample: *id001
+- {activation: relu, beta: 0.1, name: Activation, target: 0}
+- ignore_border: true
+  name: MaxPooling2D
+  poolsize: !!python/tuple [2, 2]
+  stride: null
+- {name: Dropout, p: 0.25}
+- {name: Flatten}
+- {W_constraint: null, W_regularizer: null, activation: linear, activity_regularizer: null,
+  b_constraint: null, b_regularizer: null, init: normal, input_dim: 4096, name: Dense,
+  output_dim: 512}
+- {activation: relu, beta: 0.1, name: Activation, target: 0}
+- {name: Dropout, p: 0.5}
+- {W_constraint: null, W_regularizer: null, activation: linear, activity_regularizer: null,
+  b_constraint: null, b_regularizer: null, init: normal, input_dim: 512, name: Dense,
+  output_dim: 10}
+- {activation: softmax, beta: 0.1, name: Activation, target: 0}
+loss: categorical_crossentropy
+name: Sequential
+optimizer: {decay: 1.0e-06, lr: 0.01, momentum: 0.9, name: SGD, nesterov: true}
+theano_mode: null

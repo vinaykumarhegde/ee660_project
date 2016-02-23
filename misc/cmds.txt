@@ -1,0 +1,5 @@
+##SSH AWS
+ssh -i ~/aws_terminal/ml_aws_kp.pem  ubuntu@54.183.235.140
+
+##SCP from local machine to AWS
+scp -i ~/aws_terminal/ml_aws_kp.pem  dataset/original/dataset.hdf5 ubuntu@54.183.235.140:~/.

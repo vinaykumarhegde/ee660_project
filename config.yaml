@@ -1,0 +1,4 @@
+#YAML config file for ML project.
+defaults:
+    project_path: '~/ee660_project/'
+    dataset:  'original'

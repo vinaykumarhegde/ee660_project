@@ -1,0 +1,32 @@
+25 epochs
+ubuntu@master:~$ python cifar10_cnn_predict.py
+Using gpu device 0: GRID K520
+50000 train samples
+10000 test samples
+50000/50000 [==============================] - 35s
+Train accuracy: 0.78074
+10000/10000 [==============================] - 7s
+Test accuracy: 0.7523
+
+35 epochs
+  Using gpu device 0: GRID K520
+50000 train samples
+10000 test samples
+Predicting train labels...
+50000/50000 [==============================] - 35s
+Train accuracy: 0.7813
+Predicting test labels...
+10000/10000 [==============================] - 7s
+Test accuracy: 0.7612
+
+50 epochs.
+python cifar10_cnn_predict_nokaggle.py
+Using gpu device 0: GRID K520
+50000 train samples
+10000 test samples
+Predicting train labels...
+50000/50000 [==============================] - 35s
+Train accuracy: 0.81288
+Predicting test labels...
+10000/10000 [==============================] - 7s
+Test accuracy: 0.783
